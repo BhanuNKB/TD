@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityTechnologies/TowerDefenseTemplate/Scenes/MainMenu.unity
     guid: 52ec9ce582990433ba91d25f0b8a58c0
   - enabled: 1
@@ -24,3 +24,4 @@ EditorBuildSettings:
     path: Assets/UnityTechnologies/TowerDefenseTemplate/Scenes/Levels/Level5/Level5.unity
     guid: fc4839b9a8d054242a87070a88f6b35c
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
