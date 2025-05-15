@@ -80,7 +80,7 @@ namespace TowerDefense.Game
 				Debug.LogWarningFormat("[GAME] Cannot check if level with id = {0} is completed. Not in level list", levelId);
 				return 0;
 			}
-
+			Debug.Log("Getting Star for level" + levelId);
 			return m_DataStore.GetNumberOfStarForLevel(levelId);
 		}
 	}

@@ -46,6 +46,7 @@ namespace TowerDefense.Game
 				}
 			}
 			completedLevels.Add(new LevelSaveData(levelId, starsEarned));
+			Debug.Log("Added when level completed");
 		}
 
 		/// <summary>

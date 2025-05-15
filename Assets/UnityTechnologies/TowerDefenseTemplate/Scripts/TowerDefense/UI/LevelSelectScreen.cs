@@ -68,21 +68,23 @@ namespace TowerDefense.UI
 				button.transform.SetParent(layout.transform);
 				button.transform.localScale = Vector3.one;
 				m_Buttons.Add(button.GetComponent<Button>());
+				if (i != 0)
+					m_Buttons[m_Buttons.Count - 1].interactable = false;
 			}
-			if (rightBuffer != null)
-			{
-				rightBuffer.SetAsLastSibling();
-			}
+			//if (rightBuffer != null)
+			//{
+			//	rightBuffer.SetAsLastSibling();
+			//}
 
-			for (int index = 1; index < m_Buttons.Count - 1; index++)
-			{
-				Button button = m_Buttons[index];
-				SetUpNavigation(button, m_Buttons[index - 1], m_Buttons[index + 1]);
-			}
+			//for (int index = 1; index < m_Buttons.Count - 1; index++)
+			//{
+			//	Button button = m_Buttons[index];
+			//	SetUpNavigation(button, m_Buttons[index - 1], m_Buttons[index + 1]);
+			//}
 			
 
-			SetUpNavigation(m_Buttons[0], backButton, m_Buttons[1]);
-			SetUpNavigation(m_Buttons[m_Buttons.Count - 1], m_Buttons[m_Buttons.Count - 2], null);
+			//SetUpNavigation(m_Buttons[0], backButton, m_Buttons[1]);
+			//SetUpNavigation(m_Buttons[m_Buttons.Count - 1], m_Buttons[m_Buttons.Count - 2], null);
 			
 			mouseScroll.SetHasRightBuffer(rightBuffer != null);
 		}

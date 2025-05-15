@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e0f254691ef8343a6f44863e043746, type: 3}
+  m_Name: SampleConversation
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerName: Lena
+    lineText: Hey Arin, did you hear that noise coming from the cave?
+  - speakerName: Arin
+    lineText: "Yeah, I\u2019m getting strange readings on my scanner too."
+  - speakerName: Lena
+    lineText: Should we check it out? It might be dangerous.
+  - speakerName: Arin
+    lineText: "We have to. It could be the artifact we\u2019re looking for."
+  - speakerName: Lena
+    lineText: Alright. Stay close and keep your scanner ready.
+  - speakerName: Arin
+    lineText: "Got it. Let\u2019s move."
+  - speakerName: Lena
+    lineText: Sure.
