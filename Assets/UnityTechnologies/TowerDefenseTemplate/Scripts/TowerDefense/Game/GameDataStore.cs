@@ -48,6 +48,8 @@ namespace TowerDefense.Game
 			completedLevels.Add(new LevelSaveData(levelId, starsEarned));
 			Debug.Log("Added when level completed");
 		}
+		
+		
 
 		/// <summary>
 		/// Determines if a specific level is completed
@@ -71,6 +73,7 @@ namespace TowerDefense.Game
 		/// </summary>
 		public int GetNumberOfStarForLevel(string levelId)
 		{
+			
 			foreach (LevelSaveData level in completedLevels)
 			{
 				if (level.id == levelId)

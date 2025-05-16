@@ -67,9 +67,12 @@ namespace TowerDefense.UI
 				LevelSelectButton button = CreateButton(m_LevelList[i]);
 				button.transform.SetParent(layout.transform);
 				button.transform.localScale = Vector3.one;
-				m_Buttons.Add(button.GetComponent<Button>());
-				if (i != 0)
-					m_Buttons[m_Buttons.Count - 1].interactable = false;
+
+				Button btnComponent = button.GetComponent<Button>();
+				bool isInteractable = DetermineInteractability(i);
+				btnComponent.interactable = isInteractable;
+
+				m_Buttons.Add(btnComponent);
 			}
 			//if (rightBuffer != null)
 			//{
@@ -87,6 +90,19 @@ namespace TowerDefense.UI
 			//SetUpNavigation(m_Buttons[m_Buttons.Count - 1], m_Buttons[m_Buttons.Count - 2], null);
 			
 			mouseScroll.SetHasRightBuffer(rightBuffer != null);
+		}
+		
+		private bool DetermineInteractability(int levelIndex)
+		{
+			if (levelIndex == 0) return true;
+			LevelItem previousLevel = m_LevelList[levelIndex - 1];
+			int previousStars = GetStarsForLevel(previousLevel);
+			return previousStars > 2;
+		}
+		
+		private int GetStarsForLevel(LevelItem level)
+		{ 
+			return GameManager.instance.GetStarsForLevel(level.id);
 		}
 
 		/// <summary>

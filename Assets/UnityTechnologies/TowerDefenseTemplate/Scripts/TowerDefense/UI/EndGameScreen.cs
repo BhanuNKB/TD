@@ -193,7 +193,7 @@ namespace TowerDefense.UI
 			}
 			background.color = winBackgroundColor;
 
-			//first check if there are any more levels after this one
+			// First check if there are any more levels after this one
 			if (nextLevelButton == null || !GameManager.instanceExists)
 			{
 				return;
@@ -211,16 +211,22 @@ namespace TowerDefense.UI
 					break;
 				}
 			}
-			//if the level does not exist or this is the last level
-			//hide the next level button
+
+			// If the level does not exist or this is the last level, hide the button
 			if (index < 0 || index == levelCount - 1)
 			{
 				nextLevelButton.enabled = false;
 				nextLevelButton.gameObject.SetActive(false);
 				return;
 			}
-			nextLevelButton.enabled = true;
-			nextLevelButton.gameObject.SetActive(true);
+
+			
+			int currentStars = gm.GetStarsForLevel(item.id);
+			bool hasEnoughStars = currentStars > 2;
+
+			// Enable the next level button only if stars > 2
+			nextLevelButton.enabled = hasEnoughStars;
+			nextLevelButton.gameObject.SetActive(hasEnoughStars);
 		}
 
 		/// <summary>
